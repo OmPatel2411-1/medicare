@@ -1,18 +1,15 @@
 import webbrowser
-import tkinter as tk
 import os
+import streamlit as st
 
+# Function to open PHP file
 def open_php():
     file_path = os.path.abspath("signup.php")  # Get full path of signup.php
     webbrowser.open("file://" + file_path)  # Open in default browser
 
-# Create main window
-root = tk.Tk()
-root.title("Open signup.php")
+# Streamlit UI
+st.title("Open signup.php")
 
-# Create button
-button = tk.Button(root, text="Open signup.php", command=open_php, padx=20, pady=10)
-button.pack(pady=20)
-
-# Run the application
-root.mainloop()
+# Button to open signup.php
+if st.button("Open signup.php"):
+    open_php()
